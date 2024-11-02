@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; 
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black; /* Light gray background */
+    color: #333; /* Darker text for readability */
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #6c63ff; /* Vibrant purple as primary color */
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: #2aea47; /* Vibrant purple as primary color */
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #6c63ff; /* Purple for active links */
+    border-bottom: 3px solid #6c63ff;
+}
+
+@media(max-width: 995px) {
+    nav {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #6c63ff;
+        border-bottom: 3px solid #6c63ff;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem;
+        background-color: skyblue;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #63acff;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    background-color: black;
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: #6c63ff;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #007930; /* Teal for subheading */
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    color: #555;
+}
+
+.home-img {
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(108, 99, 255, 0.3);
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #00796b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #00796b;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+    background-color: #00796b;
+    box-shadow: 0 0 15px rgba(0, 121, 107, 0.6);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: transparent;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #00796b;
+    font-weight: 600;
+    border: 2px solid #00796b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #00796b;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 121, 107, 0.6);
+}
+
+
+.typing-text {
+    font-size: 3.4rem;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span {
+    position: relative;
+    color: #005d79;
+}
+
+.typing-text span::before {
+    content: "Software Developer";
+    animation: words 20s infinite;
+}
+
+.typing-text span::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid #00796b;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid transparent;
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Web Developer";
+    }
+    
+    41%, 60% {
+        content: "Web Designer";
+    }
+    
+    81%, 100% {
+        content: "Student";
+    }
+}
+
+.about, .skills, .education, .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: skyblue;
+    font-size: medium;
+}
+
+.about h2, .skills h2, .education h2, .contact h2 {
+    font-size: 4rem;
+
+    margin-bottom: 2rem;
+    color: #63ddff;
+}
+
+.about p, .skills p, .education p, .contact p {
+    font-size: 1.9rem;
+    max-width: 80%;
+    color: turquoise;
+}
+
+/* Welcome Section Styles */
+.welcome {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place video behind text */
+    filter: brightness(60%); /* Darkens video for better text readability */
+}
+
+.welcome-text h1 {
+    font-size: 5rem;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+body {
+    scroll-behavior: smooth;
+}
